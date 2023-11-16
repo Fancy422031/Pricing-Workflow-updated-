@@ -1,12 +1,14 @@
 from rest_framework import routers
 from django.urls import path
 from core.user.viewsets import UserViewSet
+from core.post.viewsets import PostViewSet
 from core.auth.viewsets import SignUpViewSet, SignInViewSet, RefreshViewSet, ForgotPasswordViewSet, ResetPasswordViewSet
 router = routers.SimpleRouter()
 
 router.register(r'auth/signup', SignUpViewSet, basename='auth-signup')
 router.register(r'auth/signin', SignInViewSet, basename='auth-signin')
 router.register(r'auth/refresh', RefreshViewSet, basename='auth-refresh')
+router.register(r'post', PostViewSet, basename='post')
 # router.register(r'auth/forgotpassword', ForgotPasswordViewSet, basename='auth-forgotpassword')
 # router.register(r'auth/forgotpassword/<str:token>/', ResetPasswordViewSet, basename='auth-resetpassword')
 
